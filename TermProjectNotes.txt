@@ -1,0 +1,76 @@
+====
+Graph takes in a plot, which takes in a polynomial to generate the pairlist, which takes in a string and is made of terms
+
+possible upgrades:
+Have this be valid
+version 2.0 allow parentheses in polynomials 
+* It's doable. if p is a polynomial u is another polynomial then it's simply a multiplication and addition of polynomials in the same vein
+as any other stack or decision tree problem. Just keep reading in terms til you reach a parentheses, then decide what to do next.
+trig term extends term
+Cartesian Graph extends Graph
+division of polynomials
+powers of polynomials
+chain rule, product rule, quotient rule
+upgrade term to have multiple variables
+upgrade derive to derive in terms of different variables
+* ^([+-]?\d*\.?\d*)([a-zA-Z]?\^?[+-]?\d*?\.?\d*?)*$ 
+* check if a valid string.
+* After that I'd need to extract every valid string by using Matcher.find() and a while loop
+3^3 currently throws an error when it should evaluate to 9
+* then again, it could cause some ambiguity
+* (3^3)x^3
+* 3^3x 
+* In the future, polynomial needs to process those elements individually
+* 3^3 is basically term t to the power of term 3
+* in this sense, 3t ^ 3t is valid
+* This will make the program more flexible
+This program needs a rewrite from the top down.
+* If I am no longer processing 2 variables, then term and even polynomial shouldn't be handling text processing.
+* The question comes down to whether I want to process each polynomial as such: 
+   * polynomial ("3x^4+2x^2"), term(3,4), term(2,2) OR polynomial("3x^4+2x^2"), term("3x^4"),term(2x^2)
+   * the problem arises when seperating the terms. "^" is currently valid, a
+   
+   nd 3^3 isn't
+   * If i process ^ as an operator rather than part of a polynomial, it allows more options. However 3x^4x will be valid.
+   
+==Catching Multiple Exceptions:
+http://docs.oracle.com/javase/7/docs/technotes/guides/language/catch-multiple.html
+
+catch (Exception1 | Exception2 e) {
+}
+
+==Exception Handling:
+
+==java.lang.Math:
+https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html
+
+==DecimalFormat:
+http://javadevnotes.com/java-double-to-string-examples#p1
+
+import java.lang.DecimalFormat;
+
+DecimalFormat d= new DecimalFormat(#0.000); // -30 will display -30.000
+DecimalFormat d2= new DecimalFormat(+#.##); // 30 will display +30
+d.format(number)
+
+
+==Regex - Capture Groups in Java: 
+http://stackoverflow.com/questions/17969436/java-regex-capturing-groups
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+Pattern p = Pattern.compile("Regex");
+Matcher m = p.matcher("String");
+
+//if(m.matches()) OR 
+if(m.find()) {
+	m.group(1);
+}
+
+==Regex: 
+https://regexone.com/lesson/excluding_characters?
+https://regex101.com/
+http://stackoverflow.com/questions/17969436/java-regex-capturing-groups
+Regex Golf
+

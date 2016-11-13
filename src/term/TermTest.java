@@ -54,16 +54,6 @@ public class TermTest {
 		terms[11] = new Term("^33"); // Does not throw error
 		System.out.println("Test 13: ");
 		terms[11] = new Term("0^33"); // Does not throw error
-		
-		
-		// - (invalid)
-		//  (invalid)
-		//  (invalid)
-		//  (invalid)
-		//  (invalid)
-		//  (invalid)
-		// 3x
-		
 	}
 
 }
